@@ -3,6 +3,8 @@ package db
 import (
 	"log"
 
+	"pkg/common/models"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -14,7 +16,7 @@ func Init(url string) *gorm.DB {
 		log.Fatalln(err)
 	}
 
-	db.AutoMigrate(models.&User{})
+	db.AutoMigrate(&models.User{})
 
 	return db
 }

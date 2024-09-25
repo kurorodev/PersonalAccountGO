@@ -3,6 +3,8 @@ package routers
 import (
 	"net/http"
 
+	"C:\Users\SystemX\Desktop\projects\PersonalAccontGO\pkg\common\models"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,7 +22,7 @@ func (h Handler) AddUser(ctx *gin.Context) {
 		return
 	}
 
-	var user User
+	var user models.User
 
 	user.FirstName = body.FirstName
 	user.LastName = body.LastName
